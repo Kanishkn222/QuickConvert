@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="QuickConvert - Free online unit converter for length, weight, temperature, volume, time and data.">
+
+    <title>QuickConvert - Convert Anything Instantly</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">⚡ QuickConvert</div>
+
+    <button id="themeBtn" onclick="toggleTheme()" title="Toggle theme">
+        🌙
+    </button>
+</header>
+
+<main>
+
+    <section class="hero">
+        <h1>Convert Anything.<br><span>Instantly.</span></h1>
+
+        <p>
+            Fast, free and simple unit conversion for everyone,
+            anywhere in the world.
+        </p>
+    </section>
+
+    <section class="converter-card">
+
+        <div class="category-buttons">
+            <button class="category active" onclick="changeCategory('length', this)">
+                📏 Length
+            </button>
+
+            <button class="category" onclick="changeCategory('weight', this)">
+                ⚖️ Weight
+            </button>
+
+            <button class="category" onclick="changeCategory('temperature', this)">
+                🌡️ Temperature
+            </button>
+
+            <button class="category" onclick="changeCategory('volume', this)">
+                💧 Volume
+            </button>
+
+            <button class="category" onclick="changeCategory('time', this)">
+                🕐 Time
+            </button>
+
+            <button class="category" onclick="changeCategory('data', this)">
+                💾 Data
+            </button>
+        </div>
+
+        <div class="conversion-area">
+
+            <div class="input-box">
+                <label>From</label>
+
+                <input
+                    type="number"
+                    id="inputValue"
+                    placeholder="Enter value"
+                    oninput="convert()"
+                >
+
+                <select id="fromUnit" onchange="convert()"></select>
+            </div>
+
+            <button class="swap-btn" onclick="swapUnits()" title="Swap units">
+                ⇄
+            </button>
+
+            <div class="input-box">
+                <label>To</label>
+
+                <div class="result" id="result">0</div>
+
+                <select id="toUnit" onchange="convert()"></select>
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button onclick="copyResult()">📋 Copy Result</button>
+            <button onclick="clearConverter()">✕ Clear</button>
+        </div>
+
+        <p class="status" id="status"></p>
+
+    </section>
+
+    <section class="features">
+
+        <div class="feature">
+            <div>⚡</div>
+            <h3>Instant</h3>
+            <p>Results update as you type.</p>
+        </div>
+
+        <div class="feature">
+            <div>🌍</div>
+            <h3>Worldwide</h3>
+            <p>Useful for people everywhere.</p>
+        </div>
+
+        <div class="feature">
+            <div>🔒</div>
+            <h3>Private</h3>
+            <p>No account or data collection.</p>
+        </div>
+
+        <div class="feature">
+            <div>📱</div>
+            <h3>Responsive</h3>
+            <p>Works on phones and computers.</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 QuickConvert · Simple tools for everyone</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
