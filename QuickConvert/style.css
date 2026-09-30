@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #111827;
+    --secondary: #6b7280;
+    --border: #e5e7eb;
+    --primary: #635bff;
+    --primary-dark: #5148e5;
+    --input: #f9fafb;
+}
+
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --secondary: #94a3b8;
+    --border: #334155;
+    --input: #0f172a;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+header {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#themeBtn {
+    border: 1px solid var(--border);
+    background: var(--input);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto 0;
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.converter-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+}
+
+.category-buttons {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.category {
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    background: var(--input);
+    color: var(--text);
+    padding: 11px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.conversion-area {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+input,
+select,
+.result {
+    width: 100%;
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--input);
+    color: var(--text);
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.swap-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.swap-btn:hover {
+    background: var(--primary-dark);
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.actions button {
+    border: 1px solid var(--border);
+    background: var(--input);
+    color: var(--text);
+    padding: 11px 17px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    border-color: var(--primary);
+}
+
+.status {
+    height: 20px;
+    margin-top: 12px;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.feature div {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin-bottom: 7px;
+}
+
+.feature p {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    main {
+        padding: 35px 15px;
+    }
+
+    .converter-card {
+        padding: 20px;
+    }
+
+    .conversion-area {
+        grid-template-columns: 1fr;
+    }
+
+    .swap-btn {
+        margin: auto;
+        transform: rotate(90deg);
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
